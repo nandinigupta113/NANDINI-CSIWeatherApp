@@ -1,13 +1,146 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Francois One', sans-serif;
+  /* font-family: 'Squada One', cursive; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* search-section */
+
+.search-box{
+  display: flex;
+  justify-content: center;
+  margin-top:3rem;
+}
+
+.search-bar{
+  width: 40rem;
+  height: 2.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  margin:1.5rem;
+  margin-top: 0.1rem;
+  outline: none;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  border-bottom: 3px solid black;
+  background: transparent;
+}
+
+/* backgrounds */
+body{
+  background:mediumaquamarine;
+  color: rgb(25, 40, 83);
+}
+/* section-2 */
+.section-2{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.weather-box{
+ font-size: 2rem;
+}
+.temp{
+  font-size:5rem;
+  margin-right: 2.5rem;
+}
+.weather{
+  text-align: center;
+  margin-right: 2rem;
+  border: 2px solid rgb(37, 37, 73);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px black;
+}
+.location-box{
+  margin-top:1rem;
+}
+.location{
+  margin-top: 1rem;
+  font-family: 'Squada One', cursive;
+}
+.date{
+  font-size:1rem;
+}
+
+.box1{
+  margin-left: 15rem;
+  display: flex;
+}
+
+.box2{
+  margin-right: 15rem;
+  display: flex;
+  justify-content: space-between;
+}
+.speed img{
+  height:5rem;
+}
+.speed{
+  margin: 2rem;
+  display: flex;
+  font-size: 2rem;
+}
+.humid img{
+  height:5rem;
+}
+.humid{
+  margin: 2rem;
+  display:flex;
+  font-size: 2rem;
+}
+
+@media(min-width:100px) and (max-width:1400px){
+  .section-2{
+    display: flex;
+    flex-direction: column;
+  }
+  .box1{
+    display: flex;
+    flex-direction: column;
+    margin-left:0px;
+  }
+  .temp{
+    display: flex;
+    justify-content: center;
+    margin-left: 4rem;
+  }
+  .location{
+    display: flex;
+    justify-content: center;
+    margin-left:0.3rem;
+    font-size:20px;
+  }
+  .weather{
+    display: flex;
+    justify-content: center;
+    margin-left: 4rem;
+    border: none;
+    box-shadow: none;
+  }
+  .date{
+    display: flex;
+    justify-content: center;
+    margin-left:0.3rem;
+    font-size:20px;
+  }
+ .box2{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+  }
+}
+
+
+
+/* images-section*/
+.images{
+  display: flex;
+  justify-content: center;
+}
+.images img{
+  height: 20rem;
 }
