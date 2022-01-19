@@ -1,10 +1,10 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import cloud from "./cloud.png";
 import speed from "./speed.png";
 import humidity from "./humidity.png";
 const api ={
-  key: "319776c92f706176e539adce9dbe2a62",
+  key: "7687972c6093c8984a704c512687273a",
   base:"https://api.openweathermap.org/data/2.5/"
 }
 const handletime = () =>{ 
@@ -20,37 +20,47 @@ const handletime = () =>{
 
 function App() {
 
-//  const [queryAPI, setqueryAPI] = useState("");
-//  const [weather, setweather] = useState("");
+  const [query, setQuery] = useState("");
+  const [weather, setWeather] = useState({});
 
-//  const search = (evt) =>{
-//      if(evt.key === "Enter"){
-//        fetch(`${api.base}weather?q=${queryAPI}&units=metric&APPID=${api.key}`)
-//         .then(res => res.json())
-//         .then(result => {
-//           setweather(result)
-//         });
-//         console.log(result);
-//      }
-//  }
+  const search = evt => {
+     if(evt.key === "Enter"){
+       fetch(`${api.base}weather?q=${query}&units=metric&appid=${api.key}`)
+        .then(res => res.json())
+        .then(result =>{
+             setWeather(result);
+             setQuery("");
+             console.log(result);
+      }
+        );
+     }
+
+  }
+
+
 
   return (
     <div className="app">
       <div className="search-box">
-        <input type="text" className="search-bar" placeholder='Search' />
+        <input type="text" className="search-bar" placeholder='Search'
+        onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search}/>
       </div>
+      
+  
       <div className="images">
               <img src={cloud} alt="" />
       </div>
       <div className="section-2">
+        {(typeof weather.main!="undefined") ?(
+          <>
           <div className="box1">
              <div className="weather-box">
-               <div className="temp">15&#176;C</div>
-               <div className="weather">Sunny</div>
+               <div className="temp">{weather.main.temp}&#176;C</div>
+               <div className="weather">{weather.weather[0].main}</div>
              </div>
              <div className="location-box">
                <div className="location">
-                  <h1>New York City, US</h1>
+                  <h1>{weather.name}, {weather.sys.country}</h1>
                </div>
                <div className="date">{handletime()}</div>
             </div>
@@ -58,13 +68,14 @@ function App() {
           <div className="box2">
              <div className="speed">
                <img src={speed} alt="" />
-                <h3>10km/h</h3>
+                <h3>{weather.wind.speed}</h3>
              </div>
              <div className="humid">
              <img src={humidity} alt="" />
-                <h3>68%</h3>
+                <h3>{weather.main.humidity}</h3>
              </div>
           </div>
+          </>) : ("")}
        </div>
     </div>
   );
