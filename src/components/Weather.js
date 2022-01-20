@@ -54,7 +54,7 @@ const handletime = () =>{
   const [mode, setmode] = useState("Enable Dark Mode")
   
   const togglemode = () => {
-   if(mode == "Enable Light Mode"){
+   if(mode === "Enable Light Mode"){
      document.body.classList.remove("blackbg");
       setmystyle({
         color:" rgb(25, 40, 83)",
@@ -69,8 +69,8 @@ const handletime = () =>{
 
    }
     else{
-        // document.body.classList.remove("warm");
-        // document.body.classList.remove("cold");
+        document.body.classList.remove("warm");
+        document.body.classList.remove("cold");
         document.body.classList.add("blackbg");
         setmystyle({
             color: "white",
@@ -78,12 +78,12 @@ const handletime = () =>{
         
         setbg({
             color: "white",
-            backgroundColor: "rgb(67, 68, 71)",
+            background: "linear-gradient(to left,rgb(44, 26, 37),rgb(105, 24, 92))",
             boxShadow:"5px 5px white",
             border:"2px solid white"
           })
         setimg({
-            filter:"invert(100%)"
+            filter:"invert(85%)"
           })
         setmode("Enable Light Mode");
         }
@@ -92,7 +92,9 @@ const handletime = () =>{
 
 
   return (
-    <div className="app">
+    <div className={`app ${ (mode === "Enable Dark Mode") ?
+                               ((typeof props.weather.main!= "undefined") ?((props.weather.main.temp > 16)?
+                                  (document.body.classList.remove("cold") & document.body.classList.add("warm")): (document.body.classList.add("cold"))):document.body.classList.add("cold")):""}`}>
         <div  className="head">
             <button onClick={togglemode} style={bg} >{mode}</button>
         </div>
@@ -175,7 +177,7 @@ const handletime = () =>{
           <div className="box2">
              <div className="speed">
                <img style={img} src={speed} alt="" />
-                <h3 style={mystyle}>{props.weather.wind.speed}</h3>
+                <h3 style={mystyle}>{props.weather.wind.speed}km/hr</h3>
              </div>
              <div className="humid">
              <img style={img} src={humidity} alt="" />

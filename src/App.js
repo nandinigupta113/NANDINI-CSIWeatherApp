@@ -21,35 +21,11 @@ function App() {
         .then(result =>{
              setWeather(result);
              setQuery("");
-            //  console.log(weather);
-            //  handleimage();
            }
         );
      }
 
   }
-
-//   // const removebg = () => {
-//   //   document.body.classList.remove("warm");
-//   //   document.body.classList.remove("cold");
-//   //   }
-//   const handleimage = () => {
-//     document.body.classList.remove("warm");
-//     document.body.classList.remove("cold");
-//    if(typeof weather.main!= "undefined"){ 
-//           if( (weather.main.temp) > 20) {
-//                  document.body.classList.add("warm");
-//                  console.log("warm");
-//                 }
-//           else{
-//                  document.body.classList.add("cold");
-//                  console.log("cold");
-//               }
-//   }
-//   else{
-//     console.log("ellse");
-//   }
-// }
 
 
   return (
