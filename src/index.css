@@ -92,7 +92,7 @@ body{
   text-align: center;
   margin-right: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 2px 2px black;
+  box-shadow: 2px 2px rgb(0, 0, 0);
 }
 .blueborder{
   border: 2px solid rgb(37, 37, 73);

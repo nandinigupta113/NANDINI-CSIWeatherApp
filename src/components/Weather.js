@@ -1,9 +1,26 @@
 
-import React, {useState} from 'react';
-import cloud from "./cloud.png";
+import React, {useState} from 'react'
 import speed from "./speed.png";
 import humidity from "./humidity.png";
-import warm from "./warm.png";
+import cloud from "./daypic/cloudday.png";
+import clear from "./daypic/clearday.png";
+import fog from "./daypic/fogday.png";
+import haze from "./daypic/hazeday.png";
+import rain from "./daypic/rainday.png";
+import snow from "./daypic/snowday.png";
+import storm from "./daypic/stormday.png";
+import wind from "./daypic/windday.png";
+
+import cloudnight from "./nightpic/cloudnight.png";
+import clearnight from "./nightpic/clearnight.png";
+import fognight from "./nightpic/fognight.png";
+import hazenight from "./nightpic/hazenight.png";
+import rainnight from "./nightpic/rainnight.png";
+import snownight from "./nightpic/snownight.png";
+import stormnight from "./nightpic/stormnight.png";
+import windnight from "./nightpic/windnight.png";
+
+
 
 
 const handletime = () =>{ 
@@ -31,6 +48,8 @@ const handletime = () =>{
   const [img,setimg] = useState({
       filter:"none"
   })
+ 
+
 
   const [mode, setmode] = useState("Enable Dark Mode")
   
@@ -59,7 +78,7 @@ const handletime = () =>{
         
         setbg({
             color: "white",
-            backgroundColor: "black",
+            backgroundColor: "rgb(67, 68, 71)",
             boxShadow:"5px 5px white",
             border:"2px solid white"
           })
@@ -84,7 +103,56 @@ const handletime = () =>{
       </div>
       
       <div className="images">
-              <img src={props.weather.weather[0].main=== "Clouds"? cloud : warm} 
+              <img style={img} src={
+                (typeof props.weather.main!= "undefined") ?
+                 (props.weather.weather[0].main=== "Clouds"?
+                                      ( mode === "Enable Dark Mode"? cloud : 
+                                            cloudnight
+                                      ):
+                  props.weather.weather[0].main=== "Clear"? 
+                                      ( mode === "Enable Dark Mode"? clear : 
+                                            clearnight
+                                       ):
+                  props.weather.weather[0].main=== "Fog"?
+                                       ( mode === "Enable Dark Mode"? fog : 
+                                            fognight
+                                       ):
+                  props.weather.weather[0].main=== "Dust"?
+                                       ( mode === "Enable Dark Mode"? wind : 
+                                               windnight
+                                       ):
+                  props.weather.weather[0].main=== "Haze"? 
+                                       ( mode === "Enable Dark Mode"? haze : 
+                                               hazenight
+                                       ):
+                  props.weather.weather[0].main=== "Smoke"?
+                                       ( mode === "Enable Dark Mode"? fog : 
+                                               fognight
+                                       ):
+                  props.weather.weather[0].main=== "Mist"?
+                                       ( mode === "Enable Dark Mode"? fog : 
+                                               fognight
+                                       ):
+                  props.weather.weather[0].main=== "Snow"?
+                                       ( mode === "Enable Dark Mode"? snow : 
+                                               snownight
+                                       ):
+                  props.weather.weather[0].main=== "Rain"?
+                                       ( mode === "Enable Dark Mode"? rain : 
+                                               rainnight
+                                        ):
+                  props.weather.weather[0].main=== "Drizzle"?
+                                       ( mode === "Enable Dark Mode"? fog : 
+                                               fognight
+                                       ):
+                  props.weather.weather[0].main=== "Thunderstorm"?
+                                       ( mode === "Enable Dark Mode"? storm : 
+                                               stormnight
+                                       ):( mode === "Enable Dark Mode"? clear : 
+                                                clearnight
+                                          )) : ( mode === "Enable Dark Mode"? clear : 
+                                                clearnight
+                                            )} 
 
                 alt="" />
       </div>
