@@ -4,11 +4,6 @@ import cloud from "./cloud.png";
 import speed from "./speed.png";
 import humidity from "./humidity.png";
 import warm from "./warm.png";
-// const api ={
-//   key: "7687972c6093c8984a704c512687273a",
-//   base:"https://api.openweathermap.org/data/2.5/"
-// }
-
 
 
 const handletime = () =>{ 
@@ -25,37 +20,73 @@ const handletime = () =>{
 
 
 
-function App(props) {
+ export default function Weather(props) {
 
-//   const [query, setQuery] = useState("");
-//   const [weather, setWeather] = useState({});
+  const [bg, setbg] = useState({
+    backgroundColor: "rgb(146, 175, 164)"
+  })
+  const [mystyle, setmystyle] = useState({
+      color:" rgb(25, 40, 83)",
+  })
+  const [img,setimg] = useState({
+      filter:"none"
+  })
 
-//   const search = evt => {
-//      if(evt.key === "Enter"){
-//        fetch(`${api.base}weather?q=${query}&units=metric&appid=${api.key}`)
-//         .then(res => res.json())
-//         .then(result =>{
-//              setWeather(result);
-//              setQuery("");
-//              console.log(result);
-//       }
-//         );
-//      }
+  const [mode, setmode] = useState("Enable Dark Mode")
+  
+  const togglemode = () => {
+   if(mode == "Enable Light Mode"){
+     document.body.classList.remove("blackbg");
+      setmystyle({
+        color:" rgb(25, 40, 83)",
+      })
+      setbg({
+        backgroundColor: "rgb(146, 175, 164)"
+      })
+      setimg({
+        filter:"none"
+      })
+      setmode("Enable Dark Mode");
 
-//   }
-
+   }
+    else{
+        // document.body.classList.remove("warm");
+        // document.body.classList.remove("cold");
+        document.body.classList.add("blackbg");
+        setmystyle({
+            color: "white",
+        })
+        
+        setbg({
+            color: "white",
+            backgroundColor: "black",
+            boxShadow:"5px 5px white",
+            border:"2px solid white"
+          })
+        setimg({
+            filter:"invert(100%)"
+          })
+        setmode("Enable Light Mode");
+        }
+   }
 
 
 
   return (
     <div className="app">
+        <div  className="head">
+            <button onClick={togglemode} style={bg} >{mode}</button>
+        </div>
+
       <div className="search-box">
-        <input type="text" className="search-bar" placeholder='Search'
-        onChange={e => props.setQuery(e.target.value)} value={props.query} onKeyPress={props.search}/>
+        <input type="text" className={`search-bar ${mode === "Enable Dark Mode" ? "blackline" : "whiteline"}`} placeholder='Search'
+        onChange={e => props.setQuery(e.target.value)} value={props.query} onKeyPress={props.search} style={mystyle}/>
       </div>
       
       <div className="images">
-              <img src={cloud} alt="" />
+              <img src={props.weather.weather[0].main=== "Clouds"? cloud : warm} 
+
+                alt="" />
       </div>
 
       <div className="section-2">
@@ -63,24 +94,24 @@ function App(props) {
           <>
           <div className="box1">
              <div className="weather-box">
-               <div className="temp">{props.weather.main.temp}&#176;C</div>
-               <div className="weather">{props.weather.weather[0].main}</div>
+               <div className="temp" style={mystyle}>{props.weather.main.temp}&#176;C</div>
+               <div className={`weather ${mode === "Enable Dark Mode" ? "blueborder" : "whiteborder"}`} style={mystyle}>{props.weather.weather[0].main}</div>
              </div>
              <div className="location-box">
                <div className="location">
-                  <h1>{props.weather.name}, {props.weather.sys.country}</h1>
+                  <h1 style={mystyle}>{props.weather.name}, {props.weather.sys.country}</h1>
                </div>
-               <div className="date">{handletime()}</div>
+               <div style={mystyle} className="date">{handletime()}</div>
             </div>
           </div>
           <div className="box2">
              <div className="speed">
-               <img src={speed} alt="" />
-                <h3>{props.weather.wind.speed}</h3>
+               <img style={img} src={speed} alt="" />
+                <h3 style={mystyle}>{props.weather.wind.speed}</h3>
              </div>
              <div className="humid">
-             <img src={humidity} alt="" />
-                <h3>{props.weather.main.humidity}</h3>
+             <img style={img} src={humidity} alt="" />
+                <h3 style={mystyle}>{props.weather.main.humidity}</h3>
              </div>
           </div>
           </>) : ("")}
@@ -88,5 +119,3 @@ function App(props) {
     </div>
   );
 }
-
-export default App;

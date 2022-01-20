@@ -7,6 +7,31 @@
 }
 
 
+/* heading section */
+.head button{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid rgb(25, 40, 83);
+  box-shadow: 5px 5px rgb(25, 40, 83);
+  background: rgb(146, 175, 164);
+  color: rgb(25, 40, 83);
+  width: 50rem;
+  height: 4rem;
+  margin-bottom: 0rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.head button:hover{
+  font-size: 2.1rem;
+  box-shadow: 5px 5px  3px 2px rgb(25, 40, 83);
+  transition: 0.4s ease-in;
+}
+.app .head{
+  display: flex;
+  justify-content: center;
+}
 /* search-section */
 
 .search-box{
@@ -14,19 +39,23 @@
   justify-content: center;
   margin-top:3rem;
 }
-
+.blackline{
+  border-bottom: 3px solid rgb(0, 0, 0);
+}
+.whiteline{
+  border-bottom: 3px solid rgb(255, 255, 255);
+}
 .search-bar{
   width: 40rem;
   height: 2.5rem;
   text-align: center;
   font-size: 1.5rem;
   margin:1.5rem;
-  margin-top: 0.1rem;
+  margin-top: 0rem;
   outline: none;
   border-top:none;
   border-left:none;
   border-right:none;
-  border-bottom: 3px solid black;
   background: transparent;
 }
 
@@ -35,6 +64,17 @@ body{
   background:mediumaquamarine;
   color: rgb(25, 40, 83);
 }
+.warm{
+  background: linear-gradient(to left,rgb(236, 128, 95),rgb(163, 163, 29));
+}
+.cold{
+  background:mediumaquamarine;
+}
+.blackbg{
+  background-color: rgb(0, 0, 0);
+}
+
+
 /* section-2 */
 .section-2{
   display: flex;
@@ -51,10 +91,16 @@ body{
 .weather{
   text-align: center;
   margin-right: 2rem;
-  border: 2px solid rgb(37, 37, 73);
   border-radius: 0.5rem;
   box-shadow: 2px 2px black;
 }
+.blueborder{
+  border: 2px solid rgb(37, 37, 73);
+}
+.whiteborder{
+  border: 2px solid rgb(255, 255, 255);
+}
+
 .location-box{
   margin-top:1rem;
 }
@@ -91,6 +137,9 @@ body{
   margin: 2rem;
   display:flex;
   font-size: 2rem;
+}
+.date{
+  font-size: 1.5rem;
 }
 
 @media(min-width:100px) and (max-width:1400px){
@@ -132,15 +181,24 @@ body{
     justify-content: center;
     margin: 2rem;
   }
+  .images{
+    height: 10rem;
+  }
+  .images img{
+    width: 10rem;
+    height: 10rem;
+  }
 }
-
+@media(min-width:1400px){
+  .images img{
+    width: 17rem;
+    height: 17rem;
+  }
+}
 
 
 /* images-section*/
 .images{
   display: flex;
   justify-content: center;
-}
-.images img{
-  height: 20rem;
 }
