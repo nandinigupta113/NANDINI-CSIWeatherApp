@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/NANDINI-CSIWeatherApp/static/css/main.fbafc5ee.css",
+    "main.js": "/NANDINI-CSIWeatherApp/static/js/main.7ce119ff.js",
+    "static/js/787.b5db9f46.chunk.js": "/NANDINI-CSIWeatherApp/static/js/787.b5db9f46.chunk.js",
+    "static/media/stormday.png": "/NANDINI-CSIWeatherApp/static/media/stormday.e2aeaa738b2d0253fe0f.png",
+    "static/media/speed.png": "/NANDINI-CSIWeatherApp/static/media/speed.f8aa20104ec6fbc3a2ea.png",
+    "static/media/rainday.png": "/NANDINI-CSIWeatherApp/static/media/rainday.58d7457654d45867eadf.png",
+    "static/media/hazeday.png": "/NANDINI-CSIWeatherApp/static/media/hazeday.3ea7eb6e9f08908fb881.png",
+    "static/media/windday.png": "/NANDINI-CSIWeatherApp/static/media/windday.d2dbd5083f285de8be06.png",
+    "static/media/stormnight.png": "/NANDINI-CSIWeatherApp/static/media/stormnight.efb99e0b0484de04f698.png",
+    "static/media/fogday.png": "/NANDINI-CSIWeatherApp/static/media/fogday.defb6ae0270304f1cb1c.png",
+    "static/media/snowday.png": "/NANDINI-CSIWeatherApp/static/media/snowday.619dd9f4634f0faf36d7.png",
+    "static/media/cloudday.png": "/NANDINI-CSIWeatherApp/static/media/cloudday.d17919781436a5ac50e6.png",
+    "static/media/clearnight.png": "/NANDINI-CSIWeatherApp/static/media/clearnight.7a0dde3672c9bc93317c.png",
+    "static/media/clearday.png": "/NANDINI-CSIWeatherApp/static/media/clearday.e81609105b8eb137f55d.png",
+    "static/media/humidity.png": "/NANDINI-CSIWeatherApp/static/media/humidity.ce51bb2e293b59eb858c.png",
+    "static/media/hazenight.png": "/NANDINI-CSIWeatherApp/static/media/hazenight.dc9872302f87d9bda703.png",
+    "static/media/snownight.png": "/NANDINI-CSIWeatherApp/static/media/snownight.ac64f34ddbd0d528b47c.png",
+    "static/media/windnight.png": "/NANDINI-CSIWeatherApp/static/media/windnight.955e7095b7456694f474.png",
+    "static/media/rainnight.png": "/NANDINI-CSIWeatherApp/static/media/rainnight.25e21d964c43a15392d3.png",
+    "static/media/fognight.png": "/NANDINI-CSIWeatherApp/static/media/fognight.6df5c4faa20e50fd0584.png",
+    "index.html": "/NANDINI-CSIWeatherApp/index.html",
+    "main.fbafc5ee.css.map": "/NANDINI-CSIWeatherApp/static/css/main.fbafc5ee.css.map",
+    "main.7ce119ff.js.map": "/NANDINI-CSIWeatherApp/static/js/main.7ce119ff.js.map",
+    "787.b5db9f46.chunk.js.map": "/NANDINI-CSIWeatherApp/static/js/787.b5db9f46.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbafc5ee.css",
+    "static/js/main.7ce119ff.js"
+  ]
+}
