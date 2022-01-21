@@ -186,15 +186,16 @@ body{
   }
   .images{
     height: 10rem;
+    /* width:cover; */
   }
   .images img{
-    width: 10rem;
+    /* width: 10rem; */
     height: 10rem;
   }
 }
 @media(min-width:1400px){
   .images img{
-    width: 17rem;
+    /* width: 17rem; */
     height: 17rem;
   }
 }
