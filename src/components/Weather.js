@@ -181,7 +181,7 @@ const handletime = () =>{
              </div>
              <div className="humid">
              <img style={img} src={humidity} alt="" />
-                <h3 style={mystyle}>{props.weather.main.humidity}</h3>
+                <h3 style={mystyle}>{props.weather.main.humidity}%</h3>
              </div>
           </div>
           </>) : ("")}

@@ -17,7 +17,7 @@
   box-shadow: 5px 5px rgb(25, 40, 83);
   background: rgb(146, 175, 164);
   color: rgb(25, 40, 83);
-  width: 50rem;
+  width: 50%;
   height: 4rem;
   margin-bottom: 0rem;
   font-size: 2rem;
@@ -46,7 +46,7 @@
   border-bottom: 3px solid rgb(255, 255, 255);
 }
 .search-bar{
-  width: 40rem;
+  width: 40%;
   height: 2.5rem;
   text-align: center;
   font-size: 1.5rem;
@@ -93,7 +93,6 @@ body{
   margin-right: 2rem;
   border-radius: 0.5rem;
   box-shadow: 2px 2px rgb(0, 0, 0);
-  /* margin-bottom: 7rem; */
 }
 .blueborder{
   border: 2px solid rgb(37, 37, 73);
@@ -169,9 +168,9 @@ body{
     font-size:20px;
   }
   .weather{
-    display: flex;
-    justify-content: center;
-    margin-left: 4rem;
+    display:block;
+    margin:auto;
+    width: 70%;
   }
   .date{
     display: flex;
@@ -181,21 +180,53 @@ body{
   }
  .box2{
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
     margin: 1rem;
+    width:90%;
+    padding: 0rem;
+  }
+  .speed{
+    font-size: 1.5rem;
+    margin-top: -0.3rem;
+  }
+  .speed img{
+    height: 3rem;
+    margin-top: -0.3rem;
+  }
+  .humid img{
+    height: 3rem;
+    margin-top: -0.3rem;
+  }
+  .humid{
+    font-size: 1.5rem;
+    margin-top: -0.3rem;
   }
   .images{
     height: 10rem;
-    /* width:cover; */
   }
   .images img{
-    /* width: 10rem; */
     height: 10rem;
+  }
+  .head button{
+    width:90%;
+  }
+  .search-bar{
+    width: 80%;
+  }
+  .search-box{
+    display:block;
+    margin: auto; 
+    width:90%;
+    padding: 2rem;
+  }
+  .head{
+    display:block;
+    margin: auto;
+    width:90%;
   }
 }
 @media(min-width:1400px){
   .images img{
-    /* width: 17rem; */
     height: 17rem;
   }
 }
